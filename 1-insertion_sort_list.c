@@ -6,19 +6,19 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *new;
+	listint_t *node;
 
 	if (list == NULL || (*list)->next == NULL)
 		return;
-	new = (*list)->next;
+	node = (*list)->next;
 	while (node)
 	{
-		while ((new->prev) && (new->prev->n > new->n))
+		while ((node->prev) && (node->prev->n > node->n))
 		{
-			new = swap_node(new, list);
+			node = swap_node(node, list);
 			print_list(*list);
 		}
-		new = new->next;
+		node = node->next;
 	}
 }
 
